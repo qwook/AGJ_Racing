@@ -4,7 +4,7 @@ using System.Collections;
 public class SteeringUI : MonoBehaviour {
 
 	bool steering = false;
-	float angle = 0;
+	public float angle = 0;
 	float startAngle = 0;
 	float startSteeringAngle = 0;
 
