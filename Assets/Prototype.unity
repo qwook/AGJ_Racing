@@ -74,6 +74,33 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &71143707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 71143708}
+  m_Layer: 0
+  m_Name: CurveControlB
+  m_TagString: PathNode
+  m_Icon: {fileID: 866134395, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &71143708
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 71143707}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.68174362, y: 0, z: 10.5154724}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1708388345}
+  m_RootOrder: 1
 --- !u!1 &83017199
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,17 +127,17 @@ Light:
   serializedVersion: 3
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: .5
+  m_Intensity: .400000006
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
+    m_Type: 1
+    m_Resolution: 1
     m_Strength: 1
-    m_Bias: .0500000007
-    m_Softness: 4
-    m_SoftnessFade: 1
+    m_Bias: 0
+    m_Softness: 8
+    m_SoftnessFade: 5
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_ActuallyLightmapped: 0
@@ -132,19 +159,73 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 83017199}
   m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381676, w: .875426054}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -11.8341579, y: 2.36704922, z: 36.8946266}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!1 &105171825
+--- !u!1 &282696458
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 105171826}
+  - 4: {fileID: 282696459}
+  m_Layer: 0
+  m_Name: CurveControlA
+  m_TagString: PathNode
+  m_Icon: {fileID: 866134395, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &282696459
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 282696458}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.47420788, y: 0, z: -4.87388611}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1647222456}
+  m_RootOrder: 0
+--- !u!1 &496010191
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 496010192}
+  m_Layer: 0
+  m_Name: CurveControlA
+  m_TagString: PathNode
+  m_Icon: {fileID: 866134395, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &496010192
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 496010191}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.96942711, y: 0, z: 2.90874481}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1708388345}
+  m_RootOrder: 0
+--- !u!1 &652851799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 652851800}
   m_Layer: 0
   m_Name: Node
   m_TagString: PathNode
@@ -152,16 +233,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &105171826
+--- !u!4 &652851800
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 105171825}
+  m_GameObject: {fileID: 652851799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.3901157, y: 0, z: 15.7086182}
+  m_LocalPosition: {x: -4.35363197, y: 5.00973797, z: 57.5331879}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 2058649537}
+  - {fileID: 1206916256}
   m_Father: {fileID: 733536723}
   m_RootOrder: 2
 --- !u!1 &733536722
@@ -191,9 +274,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1647222456}
-  - {fileID: 1906328116}
-  - {fileID: 105171826}
-  - {fileID: 1482185367}
+  - {fileID: 1708388345}
+  - {fileID: 652851800}
   m_Father: {fileID: 0}
   m_RootOrder: 1
 --- !u!114 &733536724
@@ -275,8 +357,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 862777188}
-  m_LocalRotation: {x: -.00233772956, y: -.00829661917, z: -.00136910449, w: .999961913}
-  m_LocalPosition: {x: -.152167439, y: 1.14090633, z: -7.24712229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.0676546, y: .131173715, z: 39.2400513}
   m_LocalScale: {x: 1, y: .600000024, z: 2}
   m_Children:
   - {fileID: 1349251872}
@@ -306,6 +388,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b89ba5970a954b58931d5f06939d534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1206916255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1206916256}
+  m_Layer: 0
+  m_Name: CurveControlB
+  m_TagString: PathNode
+  m_Icon: {fileID: 866134395, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1206916256
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1206916255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.42464352, y: 0, z: -2.98280334}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 652851800}
+  m_RootOrder: 1
 --- !u!1 &1349251867
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,33 +514,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   car: {fileID: 862777188}
   steering: 0
---- !u!1 &1482185366
+--- !u!1 &1566356035
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1482185367}
+  - 4: {fileID: 1566356036}
   m_Layer: 0
-  m_Name: Node
+  m_Name: CurveControlB
   m_TagString: PathNode
-  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 866134395, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1482185367
+--- !u!4 &1566356036
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1482185366}
+  m_GameObject: {fileID: 1566356035}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.40647602, y: 0, z: -16.1118507}
+  m_LocalPosition: {x: 9.66764259, y: 0, z: -6.44539642}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 733536723}
-  m_RootOrder: 3
+  m_Father: {fileID: 1647222456}
+  m_RootOrder: 1
 --- !u!1 &1647222455
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,11 +563,42 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1647222455}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.71667671, y: 0, z: -8.80906296}
+  m_LocalPosition: {x: -12.5810776, y: 4.79660416, z: 47.4206924}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 282696459}
+  - {fileID: 1566356036}
   m_Father: {fileID: 733536723}
   m_RootOrder: 0
+--- !u!1 &1708388344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1708388345}
+  m_Layer: 0
+  m_Name: Node
+  m_TagString: PathNode
+  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1708388345
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1708388344}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.94467306, y: 5.00973749, z: 47.8427544}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 496010192}
+  - {fileID: 71143708}
+  m_Father: {fileID: 733536723}
+  m_RootOrder: 1
 --- !u!1 &1881814032
 GameObject:
   m_ObjectHideFlags: 0
@@ -531,30 +671,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82f5609be9bd3468f9d00ab0e482c74b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1906328115
+--- !u!1 &2058649536
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 1906328116}
+  - 4: {fileID: 2058649537}
   m_Layer: 0
-  m_Name: Node
+  m_Name: CurveControlA
   m_TagString: PathNode
-  m_Icon: {fileID: 266726316, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 866134395, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1906328116
+--- !u!4 &2058649537
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1906328115}
+  m_GameObject: {fileID: 2058649536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .529520929, y: 0, z: 12.8317347}
+  m_LocalPosition: {x: -4.16035461, y: 0, z: -.311958313}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 733536723}
-  m_RootOrder: 1
+  m_Father: {fileID: 652851800}
+  m_RootOrder: 0
