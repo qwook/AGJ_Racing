@@ -74,6 +74,69 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &83017199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 83017201}
+  - 108: {fileID: 83017200}
+  m_Layer: 0
+  m_Name: Directional light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &83017200
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 83017199}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Type: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: .5
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 1, y: 1}
+--- !u!4 &83017201
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 83017199}
+  m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381676, w: .875426054}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
 --- !u!1 &105171825
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +195,7 @@ Transform:
   - {fileID: 105171826}
   - {fileID: 1482185367}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &733536724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,8 +219,9 @@ GameObject:
   - 23: {fileID: 862777189}
   - 64: {fileID: 862777193}
   - 54: {fileID: 862777190}
+  - 114: {fileID: 862777194}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Car
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,10 +277,11 @@ Transform:
   m_GameObject: {fileID: 862777188}
   m_LocalRotation: {x: -.00233772956, y: -.00829661917, z: -.00136910449, w: .999961913}
   m_LocalPosition: {x: -.152167439, y: 1.14090633, z: -7.24712229}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_LocalScale: {x: 1, y: .600000024, z: 2}
+  m_Children:
+  - {fileID: 1349251872}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!64 &862777193
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -230,6 +295,17 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 1
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &862777194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 862777188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b89ba5970a954b58931d5f06939d534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1349251867
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,6 +318,7 @@ GameObject:
   - 92: {fileID: 1349251870}
   - 124: {fileID: 1349251869}
   - 81: {fileID: 1349251868}
+  - 114: {fileID: 1349251873}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -308,13 +385,26 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1349251867}
-  m_LocalRotation: {x: .18415691, y: 0, z: 0, w: .982896924}
-  m_LocalPosition: {x: 0, y: 4.90926933, z: -13.844986}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: .186447635, y: .00840685144, z: -.000182191143, w: .982428968}
+  m_LocalPosition: {x: .0324559286, y: 6.33237839, z: -3.29085159}
+  m_LocalScale: {x: .999867678, y: 1.5100857, z: .656713068}
   m_Children:
   - {fileID: 1881814033}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 862777192}
   m_RootOrder: 0
+--- !u!114 &1349251873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1349251867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1669f39ef046b4f8287dae8c396fd28d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  car: {fileID: 862777188}
+  steering: 0
 --- !u!1 &1482185366
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,6 +519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e4eb5ed2fb841d486950651c64c836, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angle: 0
 --- !u!114 &1881814036
 MonoBehaviour:
   m_ObjectHideFlags: 0
