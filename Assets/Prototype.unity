@@ -74,6 +74,33 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &71143707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 71143708}
+  m_Layer: 0
+  m_Name: CurveControlB
+  m_TagString: PathNode
+  m_Icon: {fileID: 866134395, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &71143708
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 71143707}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.68174362, y: 0, z: 10.5154724}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1708388345}
+  m_RootOrder: 1
 --- !u!1 &83017199
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,17 +127,17 @@ Light:
   serializedVersion: 3
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: .5
+  m_Intensity: .400000006
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
-    m_Resolution: -1
+    m_Type: 1
+    m_Resolution: 1
     m_Strength: 1
-    m_Bias: .0500000007
-    m_Softness: 4
-    m_SoftnessFade: 1
+    m_Bias: 0
+    m_Softness: 8
+    m_SoftnessFade: 5
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_ActuallyLightmapped: 0
@@ -132,7 +159,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 83017199}
   m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381676, w: .875426054}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -11.8341579, y: 2.36704922, z: 36.8946266}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -146,7 +173,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 282696459}
   m_Layer: 0
-  m_Name: CurveControl
+  m_Name: CurveControlA
   m_TagString: PathNode
   m_Icon: {fileID: 866134395, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -159,7 +186,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 282696458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.03585148, y: 0, z: -6.77151108}
+  m_LocalPosition: {x: 3.47420788, y: 0, z: -4.87388611}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1647222456}
@@ -173,7 +200,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 496010192}
   m_Layer: 0
-  m_Name: CurveControl
+  m_Name: CurveControlA
   m_TagString: PathNode
   m_Icon: {fileID: 866134395, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -186,7 +213,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 496010191}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.154175758, y: 0, z: 8.79556274}
+  m_LocalPosition: {x: 4.96942711, y: 0, z: 2.90874481}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1708388345}
@@ -217,6 +244,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2058649537}
+  - {fileID: 1206916256}
   m_Father: {fileID: 733536723}
   m_RootOrder: 2
 --- !u!1 &733536722
@@ -329,8 +357,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 862777188}
-  m_LocalRotation: {x: -.00233772956, y: -.00829661917, z: -.00136910449, w: .999961913}
-  m_LocalPosition: {x: -.152167439, y: 1.14090633, z: -7.24712229}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.0676546, y: .131173715, z: 39.2400513}
   m_LocalScale: {x: 1, y: .600000024, z: 2}
   m_Children:
   - {fileID: 1349251872}
@@ -360,6 +388,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b89ba5970a954b58931d5f06939d534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1206916255
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1206916256}
+  m_Layer: 0
+  m_Name: CurveControlB
+  m_TagString: PathNode
+  m_Icon: {fileID: 866134395, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1206916256
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1206916255}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.42464352, y: 0, z: -2.98280334}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 652851800}
+  m_RootOrder: 1
 --- !u!1 &1349251867
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,6 +514,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   car: {fileID: 862777188}
   steering: 0
+--- !u!1 &1566356035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1566356036}
+  m_Layer: 0
+  m_Name: CurveControlB
+  m_TagString: PathNode
+  m_Icon: {fileID: 866134395, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1566356036
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1566356035}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.66764259, y: 0, z: -6.44539642}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1647222456}
+  m_RootOrder: 1
 --- !u!1 &1647222455
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,10 +563,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1647222455}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.86519432, y: 4.79660416, z: 48.1406097}
+  m_LocalPosition: {x: -12.5810776, y: 4.79660416, z: 47.4206924}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 282696459}
+  - {fileID: 1566356036}
   m_Father: {fileID: 733536723}
   m_RootOrder: 0
 --- !u!1 &1708388344
@@ -513,6 +596,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 496010192}
+  - {fileID: 71143708}
   m_Father: {fileID: 733536723}
   m_RootOrder: 1
 --- !u!1 &1881814032
@@ -596,7 +680,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2058649537}
   m_Layer: 0
-  m_Name: CurveControl
+  m_Name: CurveControlA
   m_TagString: PathNode
   m_Icon: {fileID: 866134395, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -609,7 +693,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2058649536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.5674634, y: 0, z: -.541366577}
+  m_LocalPosition: {x: -4.16035461, y: 0, z: -.311958313}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 652851800}
