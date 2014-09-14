@@ -51,6 +51,6 @@ public class FollowPlayerCar : MonoBehaviour {
 		back_cam.y = (away_cam.y - back_cam.y)*_pct_to_away_cam + back_cam.y;
 		back_cam.z = (away_cam.z - back_cam.z)*_pct_to_away_cam + back_cam.z;
 		this.gameObject.transform.position = back_cam;
-		this.gameObject.transform.LookAt(_follow.transform.position);
+		this.gameObject.transform.LookAt(_follow.transform.position,new Vector3(0,1,0));
 	}
 }
