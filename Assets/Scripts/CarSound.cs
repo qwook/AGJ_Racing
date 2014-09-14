@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CarSound : MonoBehaviour {
 
+	public Rigidbody _body;
 	public AudioClip drive;
 	public AudioClip curve;
 	public AudioSource audioSource1;
@@ -13,6 +14,7 @@ public class CarSound : MonoBehaviour {
 	void Start () {
 		audioSource1.clip = drive;
 		audioSource2.clip = curve;
+		_body = gameObject.GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -23,9 +25,10 @@ public class CarSound : MonoBehaviour {
 
 		float steering = steeringUI.angle;
 
-		if (Mathf.Abs (steering) > 50 && rigidbody.velocity.magnitude > 0) {
-			audioSource2.Play();		
-			
-		} 
+		if (Mathf.Abs (steering) > 50 && _body.velocity.magnitude > 0) {
+			audioSource2.Play ();		
+		} else if (Mathf.Abs (steering) < 10) {
+			audioSource2.Stop ();
+		}
 	}
 }

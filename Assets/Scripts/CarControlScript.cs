@@ -38,20 +38,20 @@ public class CarControlScript : MonoBehaviour {
 
 			}
 
-			// brake
+			// brake and back
 			if (Input.GetKeyDown (KeyCode.C)) {
 				Vector3 reduce_vec = Util.vec_scale(Util.vec_sub(this.gameObject.transform.position,_backwards.transform.position).normalized,20);
-				if(_body.velocity.x > 0 && _body.velocity.z > 0){
+				//if(_body.velocity.x > 0 && _body.velocity.z > 0){
 					//_body.AddForce(reduce_vec);
 					_body.velocity -= reduce_vec;	
-				}
+				//}
 			}
 
 			// steering wheel
 			float steering = steeringUI.angle;
 			if (Mathf.Abs(steering) > 1 && _body.velocity.magnitude > 0) {
 				if (_instanceid_to_collision_normal.Count > 0 && is_flat()) {
-					_body.transform.Rotate(0,0,10 * steering/360);
+					_body.transform.Rotate(0, 0.1f * steering/3600, 0);
 				}
 			}
 

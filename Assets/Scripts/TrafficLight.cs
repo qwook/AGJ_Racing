@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TrafficLight : MonoBehaviour {
 
-	float timer = 1.2f;
+	float timer = 1.1f;
 	float delayTime = 1.0f;
 	int counter = 0;
 	public bool gameStart = false;
@@ -45,9 +45,9 @@ public class TrafficLight : MonoBehaviour {
 		} else if (counter == 3) {
 			green.SetActive(false);
 			green2.SetActive(false);
-			gameObject.SetActive(false);
 			gameStart = true;
-		}
+			gameObject.SetActive(false);
+		} 
 						
 	}
 }
