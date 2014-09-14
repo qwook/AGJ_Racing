@@ -18,32 +18,18 @@ public class CarControlScript : MonoBehaviour {
 
 	void Update () {
 		float steering = steeringUI.angle;
-		if (Input.GetKey(KeyCode.Space)) {
-			// if (_instanceid_to_collision_normal.Count > 0 && is_flat()) {
-				// Vector3 move_dir = Util.vec_scale(Util.vec_sub(this.gameObject.transform.position,_backwards.transform.position).normalized,35);
-				//move_dir = Util.vec_scale(move_dir,50);
-				//_body.AddForce(move_dir);
-				// _body.velocity = move_dir;
-
+		if (_instanceid_to_collision_normal.Count > 0 && is_flat()) {
+			if (Input.GetKey(KeyCode.Space)) {
 				rigidbody.AddRelativeForce(Vector3.up*-100, ForceMode.Acceleration);
-				rigidbody.AddRelativeTorque(Vector3.forward*steering*0.25f, ForceMode.Acceleration);
-			// }
-
+				rigidbody.AddRelativeTorque(Vector3.forward*steering*0.15f, ForceMode.Acceleration);
+			}
 		}
-
-		if (Mathf.Abs(steering) > 1) {
-			// if (_instanceid_to_collision_normal.Count > 0 && is_flat()) {
-				// _body.transform.Rotate(0,0,10 * steering/360);
-				// rigidbody.AddRelativeTorque(Vector3.forward*steering*0.25f, ForceMode.Acceleration);
-			// }
-		}
-
 
 		if (Input.GetKey(KeyCode.R)) {
-			// this.transform.position = _start_pos;
-			// this.transform.eulerAngles = new Vector3(270,0,0);
-			// _body.angularVelocity = Vector3.zero;
-			// _body.velocity = Vector3.zero;
+			this.transform.position = _start_pos;
+			this.transform.eulerAngles = new Vector3(270,0,0);
+			_body.angularVelocity = Vector3.zero;
+			_body.velocity = Vector3.zero;
 		}
 
 	}
