@@ -19,9 +19,15 @@ public class CarControlScript : MonoBehaviour {
 	void Update () {
 		float steering = steeringUI.angle;
 		if (_instanceid_to_collision_normal.Count > 0 && is_flat()) {
-			if (Input.GetKey(KeyCode.Space)) {
+			if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W)) {
 				rigidbody.AddRelativeForce(Vector3.up*-100, ForceMode.Acceleration);
 				rigidbody.AddRelativeTorque(Vector3.forward*steering*0.15f, ForceMode.Acceleration);
+			}
+			if (Input.GetKey(KeyCode.A)) {
+				rigidbody.gameObject.transform.Rotate(0,0,-3);
+			}
+			if (Input.GetKey(KeyCode.D)) {
+				rigidbody.gameObject.transform.Rotate(0,0,3);
 			}
 		}
 
