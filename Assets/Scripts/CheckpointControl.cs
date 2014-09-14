@@ -4,105 +4,63 @@ using System.Collections.Generic;
 
 public class CheckpointControl : MonoBehaviour {
 	
+	public static CheckpointControl inst;
+
 	Transform myTransform;	
-	float timer = 0.0f;
-	int checkpointCounter = 0;		
+	public float timer = 0.0f;	
 	GameObject[] checkpointLocations;
-	List<float> lapTimes = new List<float>();
 
-	int currentLap = 1;
-	int totalLaps = 2;
+	public int score = 0;
 
+	public void reset() {
+		timer = 40;
+		timer_ct = 20;
+		score = 0;
+	}
 
-	// Use this for initialization
 	void Start () {
-		myTransform = transform;
-		checkpointCounter = 0;	
+		inst = this;
 
-		//get positions of possible checkpoint spawn locations
+		myTransform = transform;
+
 		checkpointLocations = GameObject.FindGameObjectsWithTag("Checkpoint");
 
 		myTransform.position = checkpointLocations[Util.rand.Next(checkpointLocations.Length)].transform.position;
+
+		reset();
 	}
 
-	// Update is called once per frame
 	void Update () {
-		
-		//timer
-			timer += Time.deltaTime;				
+		timer -= Time.deltaTime;				
 
-
+		collided_ct--;
 	}
+
+	int collided_ct = 0;
+	int timer_ct;
+
 
 	void OnTriggerEnter(Collider col) {
-		if (col.tag == "Player") {
+		if (col.tag == "Player" && collided_ct <= 0) {
+			timer += timer_ct;
+			collided_ct = 5;
 			col.GetComponent<CarControlScript>()._start_pos = myTransform.position;
+
+			GameObject plustime = (GameObject)Instantiate(Resources.Load("prefabs/Plustime"));
+			plustime.GetComponent<TextMesh>().text = "Time + "+timer_ct;
+
+			timer_ct = Mathf.Max(5,timer_ct-1);
+
+			plustime.transform.position = myTransform.position;
+
+			GameObject fireworks = (GameObject)Instantiate(Resources.Load("prefabs/Fireworks"));
+			fireworks.transform.position = myTransform.position;
+
 			myTransform.position = checkpointLocations[Util.rand.Next(checkpointLocations.Length)].transform.position;
-			return;
+
+			score++;
 		}
 	}
-
-	/**
-	void OnTriggerEnter(Collider col){
-
-		if (col.tag == "Player") {
-			
-			
-			myTransform.position = checkpointLocations[Util.rand.Next(checkpointLocations.Length)].transform.position;
-			return;
-
-			Debug.Log ("YOU HIT ME");
-
-			if(checkpointCounter < checkpointLocations.Length){
-				
-				//move checkpoint to next location
-				Vector3 newLocation = checkpointLocations[checkpointCounter].transform.position;
-				
-				transform.position = newLocation;
-				Debug.Log ("Moved to: "+newLocation);
-				
-				checkpointCounter++;
-			}else{ //Hit the last checkpoint
-				currentLap++;
-				float lapTime = timer;
-
-				if(currentLap <= totalLaps){
-					//Reset Checkpoints (Do another lap)
-					checkpointCounter = 0;
-					//Add lap time
-					lapTimes.Add(lapTime);
-					//Reset Timer;
-					timer = 0.0f;
-
-				}else{ //END GAME
-
-					float totalTime = 0.0f;
-
-					lapTimes.Add(lapTime);
-					
-					Debug.Log ("DONE!");
-
-					//TODO: make a end screen for these results:
-					foreach(float laptime in lapTimes){
-						Debug.Log("lap score: "+laptime );
-						totalTime += laptime;
-					}
-
-					Debug.Log ("Total Time: "+totalTime);
-
-					Destroy(this);
-				}
-			}
-
-
-		}
-	}
-	**/
-
-
-
-
-		//Active a different checkpoint
 
 
 

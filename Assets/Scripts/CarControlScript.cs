@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class CarControlScript : MonoBehaviour {
+	
+
+	public static CarControlScript inst;
 
 	public Rigidbody _body;
 	public GameObject _backwards, _up;
@@ -13,6 +16,7 @@ public class CarControlScript : MonoBehaviour {
 		_body = gameObject.GetComponent<Rigidbody>();
 		_backwards = Util.FindInHierarchy(this.gameObject,"Backwards");
 		_up = Util.FindInHierarchy(this.gameObject,"Up");
+		inst = this;
 	}
 
 	bool hasFloor;
@@ -36,12 +40,16 @@ public class CarControlScript : MonoBehaviour {
 		}
 
 		if (Input.GetKey(KeyCode.R)) {
-			this.transform.position = _start_pos;
-			this.transform.eulerAngles = new Vector3(270,0,0);
-			_body.angularVelocity = Vector3.zero;
-			_body.velocity = Vector3.zero;
+			reset();
 		}
 
+	}
+
+	public void reset() {
+		this.transform.position = _start_pos;
+		this.transform.eulerAngles = new Vector3(270,0,0);
+		_body.angularVelocity = Vector3.zero;
+		_body.velocity = Vector3.zero;
 	}
 
 		
