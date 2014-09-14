@@ -22,7 +22,7 @@ public class FollowPlayerCar : MonoBehaviour {
 		if (_control._instanceid_to_collision_normal.Count == 0) {
 			_in_air_ct++;
 		} else {
-			_in_air_ct = 0;
+			_in_air_ct/=2;
 		}
 
 		if (_control.get_from_flat_angle()<1.9f || _in_air_ct > 20) {

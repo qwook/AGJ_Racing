@@ -15,7 +15,11 @@ public class CarControlScript : MonoBehaviour {
 		_up = Util.FindInHierarchy(this.gameObject,"Up");
 	}
 
+	bool hasFloor;
 
+	public bool HasFloor() {
+		return hasFloor;
+	}
 	void Update () {
 		float steering = steeringUI.angle;
 		if (_instanceid_to_collision_normal.Count > 0 && is_flat()) {
@@ -38,6 +42,19 @@ public class CarControlScript : MonoBehaviour {
 			_body.velocity = Vector3.zero;
 		}
 
+	}
+
+		
+	void OnCollisionStay(Collision collisionInfo) {
+		Vector3 upDir = transform.rotation * Vector3.forward;
+		hasFloor = false;
+		foreach(ContactPoint contact in collisionInfo.contacts) {
+			float angle = Vector3.Angle(contact.normal, upDir);
+
+			if (angle < 30.0f) {
+				hasFloor = true;
+			}
+		}
 	}
 
 	public float get_from_flat_angle() {
