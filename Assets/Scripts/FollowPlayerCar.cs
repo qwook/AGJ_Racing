@@ -35,7 +35,7 @@ public class FollowPlayerCar : MonoBehaviour {
 			_follow.transform.position,
 			Util.vec_add(
 				Util.vec(0,20,0),
-				Util.vec_scale(Util.vec_sub(_backwards.transform.position,_follow.transform.position).normalized,25)
+				Util.vec_scale(Util.vec_sub(_backwards.transform.position,_follow.transform.position).normalized,35)
 			)
 		);
 
@@ -43,7 +43,7 @@ public class FollowPlayerCar : MonoBehaviour {
 			_follow.transform.position,
 			Util.vec_add(
 				Util.vec_scale(Util.vec_sub(_up.transform.position,_follow.transform.position).normalized,10),
-				Util.vec_scale(Util.vec_sub(_backwards.transform.position,_follow.transform.position).normalized,20)
+				Util.vec_scale(Util.vec_sub(_backwards.transform.position,_follow.transform.position).normalized,30)
 			)
 		);
 
