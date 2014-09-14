@@ -6,7 +6,7 @@ public class CarControlScript : MonoBehaviour {
 
 	public Rigidbody _body;
 	public GameObject _backwards, _up;
-
+	public Vector3 _start_pos;
 	public SteeringUI steeringUI;
 
 	void Start () {
@@ -36,7 +36,7 @@ public class CarControlScript : MonoBehaviour {
 
 
 		if (Input.GetKey(KeyCode.R)) {
-			this.transform.position = Util.vec(-4.657434f,-23.28292f,-78.73008f);
+			this.transform.position = _start_pos;
 			this.transform.eulerAngles = new Vector3(270,0,0);
 			_body.angularVelocity = Vector3.zero;
 			_body.velocity = Vector3.zero;
