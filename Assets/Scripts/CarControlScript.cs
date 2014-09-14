@@ -17,6 +17,8 @@ public class CarControlScript : MonoBehaviour {
 
 
 	void Update () {
+		
+		Debug.Log((_instanceid_to_collision_normal.Count)+","+(is_flat()));
 		if (Input.GetKey(KeyCode.Space)) {
 			if (_instanceid_to_collision_normal.Count > 0 && is_flat()) {
 				Vector3 move_dir = Util.vec_scale(Util.vec_sub(this.gameObject.transform.position,_backwards.transform.position).normalized,35);
