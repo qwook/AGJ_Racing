@@ -19,13 +19,13 @@ public class FollowPlayerCar : MonoBehaviour {
 	float _pct_to_away_cam = 0;
 	float _in_air_ct = 0;
 	void Update () {
-		if (_control._instanceid_to_collision_normal.Count == 0) {
+		if (_control.HasFloor()) {
 			_in_air_ct++;
 		} else {
 			_in_air_ct = 0;
 		}
 
-		if (_control.get_from_flat_angle()<1.9f || _in_air_ct > 20) {
+		if (_control.HasFloor() || _in_air_ct > 20) {
 			_pct_to_away_cam =_pct_to_away_cam +  (1-_pct_to_away_cam)/15.0f;
 		} else {
 			_pct_to_away_cam *= 0.96f;
